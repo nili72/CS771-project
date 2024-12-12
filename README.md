@@ -1,1 +1,2 @@
-# CS771-project
+# Latent Diffusion for Scalable Generation of Electron Microscopy Image-Mask Pairs
+CS771-project
