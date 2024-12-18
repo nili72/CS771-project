@@ -1,0 +1,42 @@
+# Detectron training values
+# input_dir = '/jet/home/nliu3/cnn/figshare/MaskRCNNObjectDetection/code/train/dataset1_initial_split/'
+output_dir : '../../output/aug_real'
+starting_fresh : False
+max_iter : 100000
+roi_iou_threshold : 0.4
+rpn_iou_min : 0.3
+rpn_iou_max : 0.7
+anchor_angles : [-90, 0, 90]
+anchor_sizes : [4, 8, 16, 32, 64, 128, 256] # add 4, 8, 16  change 
+anchor_aspect_ratios : [0.5, 1, 2]
+num_frozen_layers : 2
+pretrained_model_name : 'mask_rcnn_R_50_FPN_3x.yaml'
+use_pretrained_model_weights : True
+pretrained_model_weights : 'mask_rcnn_R_50_FPN_3x'
+crop_enabled : False
+crop_size : [0.9, 0.9]
+input_min_size_train : [640, 672, 704, 736, 768, 800]
+#input_min_size_train : [512, 640, 672, 704, 736, 768, 800, 1024, 1536, 2048]
+#train_dataset_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_cnl/train_cleaned'
+train_dataset_path : '/ocean/projects/mat240020p/nliu3/maskrcnn/dataset/augmentation/exp/augmented_data_real/'
+# # Detectron analysis values
+num_images : 1000
+num_checkpoints : 1
+only_last_checkpoint : True
+iou_score_threshold_test : [0.1] #confidence score
+true_and_pred_matching_thresholds : [0.1, 0.3, 0.5, 0.7] #IoU cutoff for true vs. pred matching
+test_dataset_path : '/ocean/projects/mat240020p/nliu3/maskrcnn/dataset/4k_gen/val/'
+#test_dataset_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_cnl/val'
+#test_dataset_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_nome/val'
+
+#train_annotations_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_cnl/annotations/train.json'
+train_annotations_path : '/ocean/projects/mat240020p/nliu3/maskrcnn/dataset/augmentation/exp/train.json'
+#test_annotations_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_cnl/annotations/val.json'
+#test_annotations_path : '/jet/home/rjacobs/detectron_maskrcnn_data_cavity/matt_cavity_nome/annotations/val.json'
+test_annotations_path : '/ocean/projects/mat240020p/nliu3/maskrcnn/dataset/4k_gen/annotations/val.json'
+
+run_maskrcnn : True
+analyze_maskrcnn : True
+#
+mask_on : True
+cascade_maskrcnn : False
