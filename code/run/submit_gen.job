@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p GPU-shared
+#SBATCH -t 48:00:00
+#SBATCH --gpus=v100-16:1
+#SBATCH -A mat240020p
+#SBATCH --output=run_ldm_aug_unet_all.log
+
+#type 'man sbatch' for more information and options
+#this job will ask for 1 full GPU node(8 V100 GPUs) for 5 hours
+#this job would potentially charge 40 GPU SUs
+
+#echo commands to stdout
+set -x
+
+# move to working directory
+# this job assumes:
+# - all input data is stored in this directory
+# - all output should be stored in this directory
+# - please note that groupname should be replaced by your groupname
+# - username should be replaced by your username
+# - path-to-directory should be replaced by the path to your directory where the executable is
+
+source activate base
+conda activate cnn
+module load cuda
+module load cudnn
+#~/.conda/envs/d2_2021-05-03/bin/python run_detectron_cavity.py run_15_dataset1.yaml > run_detectron.txt
+python ../libs/run_detectron.py ../configs/run_15_dataset_unet3_gen.yaml > run_ldm_aug_unet_0.1.txt
+
+#run pre-compiled program which is already in your project space
+
+#./gpua.out
+
