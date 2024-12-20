@@ -5,9 +5,6 @@ CS771-project
 # Latent Diffusion Models
 [arXiv](https://arxiv.org/abs/2112.10752) | [BibTeX](#bibtex)
 
-<p align="center">
-<img src=assets/results.gif />
-</p>
 
 
 To get started, install the additionally required python packages into your `ldm` environment
