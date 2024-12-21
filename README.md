@@ -20,9 +20,9 @@ python augment_em_images.py
 it will crop images into 256*256 size with rotation and flipping operations,
 change the directories to augment both images and masks
 
-## Model Training
+## Model Training for Cond-LDM or LDM
 ```shell script
-python main.py path_config
+python latent-diffusion/main.py --base path_to_config -t --gpus 0, --logdir path_to_log
 ```
 ## Model Interference
 ```shell script
