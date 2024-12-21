@@ -14,14 +14,20 @@ pip install git+https://github.com/arogozhnikov/einops.git
 ```
 
 ## Data preparation
-python data_augmentation.py
-
+```shell script
+python augment_em_images.py
+```
+it will crop images into 256*256 size with rotation and flipping operations,
+change the directories to augment both images and masks
 
 ## Model Training
-
-python main.py
-
-
+```shell script
+python main.py path_config
+```
+## Model Interference
+```shell script
+python inference_dataset-many.py  --batch_size batch_size
+```
 ## Pretrained Autoencoding Models
 ![rec2](assets/reconstruction2.png)
 
